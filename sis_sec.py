@@ -4,13 +4,17 @@
 
 #print dos pedais
 def pedais():
-    print('''
+    print(
+    '''
     Pressione um dos "pedais" e ele gravará depois de 3 segundos:
 
              -----       -----       -----       -----
             |  A  |     |  S  |     |  D  |     |  F  |
             \  -  /     \  -  /     \  -  /     \  -  /
               ---         ---         ---         --- 
+
+
+              Aperte ESPAÇO, para parar a gravação
     '''
     )
 

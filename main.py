@@ -1,23 +1,30 @@
-#importação das bibliotecas usadas
-from time import sleep
-from multiprocessing import Pool 
-# importação das funções que gravam em determinado pedal
-from rec_on_A import rec_on_A
-from rec_on_S import rec_on_S
-from rec_on_D import rec_on_D
-from rec_on_F import rec_on_F
+import threading
+import os
 
 from sis_sec import pedais
 
-# é necessário fazer essas funções rodarem todas ao mesmo
-# temapo, porque do jeito que esta ele vai para a primeir
-# e ai começar a segunda
-# https://pt.stackoverflo w.com/questions/386595/python-executar-dois-scripts-ao-mesmo-tempo
 
+#mostrando os pedais
 pedais()
 
-while True:
-    rec_on_A()
-    rec_on_S()
-    rec_on_D()
-    rec_on_F()
+'''
+--------------------------------------
+Rodando todos os pedais ao mesmo tempo
+--------------------------------------
+'''
+def inicia_programa(nome_arquivo):
+    os.system('py -3.7 {}'.format(nome_arquivo))
+    # Ex: os.system('py -3.7 x.py')
+
+if __name__ == "__main__":
+
+    arquivos = ['rec_on_A.py','rec_on_S.py','rec_on_D.py','rec_on_F.py']
+
+    processos = []
+    for arquivo in arquivos:
+        processos.append(threading.Thread(target=inicia_programa, args=(arquivo,)))
+        # Ex: adicionar o porcesso `threading.Thread(target=inicia_programa, args=('x.py',))`
+        
+    #rodando os processos simultaneamente
+    for processo in processos:
+        processo.start()
