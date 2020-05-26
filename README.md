@@ -1,0 +1,56 @@
+![loopyng logo](https://user-images.githubusercontent.com/62253156/82760979-3d40da80-9dc5-11ea-8690-652f656f565f.png)
+
+<h2>	Um programa escrito em python que tem como objetivo replicar uma loop station</h2>
+
+<br/>
+	
+	
+### :thinking: O que é uma loop station? 
+segue um vídeo exemplo: https://www.youtube.com/watch?v=Zdrx3YS9v8k
+
+
+### :keyboard: Um pouco mais sobreo projeto: (vídeo em desenvolvimento)
+
+
+
+
+## 	:arrow_forward: Uso:
+Iicialize o arquivo **main.py** com algum interpretador python, o programa ja estará funcionando e te dará instruções
+e mensagens sobre o que esta acontecendo. Para resumir: aperte uma das letrar **A, S, D** ou **F** para gravar um audio, 
+cada uma delas representa um dos pedais da loop station e cada uma suporta gravar uma faixa de som. Assim que quiser
+parar a gravação basta apertar espaço e o audio que fora gravado se repetira até o fechamento do programa. 
+
+Após a gravação do primeiro pedal (letra) é possível gravar nos outros e assim por diante. ainda existem funcionalidade
+a serem implementadas e também existe um possível **bug** onde seu audio fica estourado, é apenas reiniciar o computador que
+tudo voltará ao normal.
+
+
+ <h3> Se divirta! <h3/>
+
+## 	:globe_with_meridians:	 Tecnologias:
+- Gravação de audio
+- Criação e reprodução de arquivos .wav
+- Use de threading para uso de multiplas funções simultaneamente
+- Keybord listener para reeber comandos do declado
+
+
+
+## :blue_book: Bibliotecas:
+
+> pip install keyboard
+
+> pip install playsound
+
+> pip install wave
+
+> pip install pyaudio
+
+> pip install threading
+
+
+
+###	:crystal_ball: Implementações futuras
+- Interface gráfica
+- Um sistema de play e pause dos áudios que já estão tocando
+- Mais pedais de gravação
+- Uma melhora no som que é gravado, tanto no quesito musical quanto de qualidade de som
