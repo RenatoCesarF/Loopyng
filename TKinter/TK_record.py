@@ -1,11 +1,10 @@
 import pyaudio, wave 
 import tkinter as tk
-
 #Classe de um programa de gravação, não sei nada sobre classes, depois de estudar
 #adaptarei essa classe ao meu programa
 
-class AppRecording:
-    def __init__(self, window):
+class Pedal_rec:
+    def __init__(self, window,name_tape):
         self.window = window
         self.mouse_pressed = False
         recordingButton = tk.Button(window, text = "")
@@ -16,7 +15,7 @@ class AppRecording:
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 2
         self.RATE = 44100
-        self.WAVE_OUTPUT_FILENAME = 'gravacao.wav'
+        self.WAVE_OUTPUT_FILENAME = name_tape
 
         self.p = pyaudio.PyAudio()
 
@@ -58,6 +57,7 @@ class AppRecording:
         wf.setframerate(self.RATE)
         wf.writeframes(b''.join(self.frames))
         wf.close()
+ 
     #mudar "onMouseDown" por "OnKeyDown"
     def OnMouseDown(self, event):
         self.mouse_pressed = True
@@ -67,6 +67,7 @@ class AppRecording:
         self.window.after_cancel(self.after_id)
         print ("Finished recording!")
         self.finishRecording()
+        
 
     def poll(self):
         if self.mouse_pressed:

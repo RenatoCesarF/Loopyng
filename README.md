@@ -1,6 +1,6 @@
 ![loopyng logo](https://user-images.githubusercontent.com/62253156/82760979-3d40da80-9dc5-11ea-8690-652f656f565f.png)
 
-<h2>	Um programa escrito em python que tem como objetivo replicar uma loop station</h2>
+<h2>Um programa escrito em python que tem como objetivo replicar uma loop station gravando e reproduzindo em loopping seu microfone.</h2>
 
 <br/>
 	
@@ -30,22 +30,30 @@ tudo voltará ao normal.
 ## 	:globe_with_meridians:	 Tecnologias:
 - Gravação de audio
 - Criação e reprodução de arquivos .wav
-- Use de threading para uso de multiplas funções simultaneamente
-- Keybord listener para reeber comandos do declado
-
+- threading para uso de multiplas funções simultaneamente
+- Keybord listener para receber comandos do teclado.
+- TKinter para inteface gráfica
+- webbrowser para redirecionar para o navegador
 
 
 ## :blue_book: Bibliotecas:
 
-> pip install keyboard
+> keyboard
 
-> pip install playsound
+> playsound
 
-> pip install wave
+> wave
 
-> pip install pyaudio
+> pyaudio
 
-> pip install threading
+> threading
+
+> pilow
+
+> tk inter
+
+> webbrowser
+ 
 
 
 
@@ -54,3 +62,4 @@ tudo voltará ao normal.
 - Um sistema de play e pause dos áudios que já estão tocando
 - Mais pedais de gravação
 - Uma melhora no som que é gravado, tanto no quesito musical quanto de qualidade de som
+- suporte para instrumentos via cabo

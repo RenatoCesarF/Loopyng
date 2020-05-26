@@ -3,15 +3,14 @@ from tkinter import *
 from PIL import Image, ImageTk
 import tkinter as tk
 import webbrowser
-from pygame import mixer_music
-from pygame import mixer
+
 #importação dos pedais
-from TK_record import Pedal_rec
-from TK_play import loop
+from TK_record import AppRecording
 
 
-#inicializando o player
-mixer.init()
+
+
+
 
 '''
 =============================
@@ -65,19 +64,13 @@ link_git.bind("<Button-1>", callback)
 #=====================================
 
 
-#------------
-#--GRAVAÇÃO--
-#------------
-
-pedal_A = Pedal_rec(window, 'loop_a.wav') #linha que chama a class de gravação
-#colocar outro parametro da função, parametro letra que sera o  nome e letra do pedal
-#assim é possível adicionar e retirar quantos pedais quiser.
-
-#chamada do loopping, que futuramente estará em um arquivo separado
-loop('loop_a.wav', 'a')
+#------------------
+#--botão GRAVAÇÃO--
+#------------------
 
 
-pedal_S = Pedal_rec(window, 'loop_s.wav')
+pedal_A = AppRecording(window) #linha que chama a class de gravação
+pedal_S = AppRecording(window)
 
 #===============
 
