@@ -8,8 +8,9 @@ from record import record
 
 
 #quando A for clicado chama a função de gravar no "pedal" A
+
 while True:
-    #aguardando o pressionamento da letra 'A' 
+    #aguardando o pressionamento da letra 'a' 
     keyboard.wait('a')
     print('começando a gravar em...')
     sleep(1)
@@ -23,8 +24,9 @@ while True:
     # Dentro da função record existe um if para caso a tecla A seja apertada 
     # novamente a gravação sera parada
     # O parametro recebido é o nome do arquivo de audio
-
     
     #reproduzindo o audio gravado                                                                                                                                     
     while True:
         playsound('pedal_A.wav')
+        if keyboard.is_pressed('a'):
+            break

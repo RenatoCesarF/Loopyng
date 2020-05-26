@@ -11,13 +11,7 @@ from record import record
 while True:
     #aguardando o pressionamento da letra 'D' 
     keyboard.wait('d')
-    print('começando a gravar em...')
-    sleep(1)
-    print('\n 3...')
-    sleep(1)
-    print('\n 2...')
-    sleep(1)
-    print('\n 1...')
+
     record('pedal_D.wav')
     #função que realiza a gravação
     # Dentro da função record existe um if para caso a tecla D seja apertada 
@@ -28,3 +22,5 @@ while True:
     #reproduzindo o audio gravado                                                                                                                                     
     while True:
         playsound('pedal_D.wav')
+        if keyboard.is_pressed('d'):
+            break

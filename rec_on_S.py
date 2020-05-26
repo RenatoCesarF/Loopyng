@@ -11,15 +11,9 @@ from record import record
 while True:
     #aguardando o pressionamento da letra 'S' 
     keyboard.wait('s')
-    print('começando a gravar em...')
-    sleep(1)
-    print('\n 3...')
-    sleep(1)
-    print('\n 2...')
-    sleep(1)
-    print('\n 1...')
-    record('pedal_S.wav')
+    
     #função que realiza a gravação
+    record('pedal_S.wav')
     # Dentro da função record existe um if para caso a tecla A seja apertada 
     # novamente a gravação sera parada
     # O parametro recebido é o nome do arquivo de audio
@@ -28,3 +22,5 @@ while True:
     #reproduzindo o audio gravado                                                                                                                                     
     while True:
         playsound('pedal_S.wav')
+        if keyboard.is_pressed('s'):
+            break
