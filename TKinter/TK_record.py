@@ -25,7 +25,6 @@ class Pedal_rec:
                     input=True,
                     frames_per_buffer=self.CHUNK)
         except:
-            raise Exception("There is no connected microphone. Check that you connect to the left hole if you have a PC.")
             return None
 
         self.frames = []

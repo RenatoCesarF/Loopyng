@@ -58,7 +58,8 @@ tudo voltará ao normal.
 
 
 ###	:crystal_ball: Implementações futuras
-- Interface gráfica
+- Interface gráfica (em andamento)
+    * sliders para controle de volume
 - Um sistema de play e pause dos áudios que já estão tocando
 - Mais pedais de gravação
 - Uma melhora no som que é gravado, tanto no quesito musical quanto de qualidade de som
