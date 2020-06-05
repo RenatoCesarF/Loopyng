@@ -1,9 +1,10 @@
 import pyaudio, wave 
 import tkinter as tk
+from TK_play import play
 #Classe de um programa de gravação, não sei nada sobre classes, depois de estudar
 #adaptarei essa classe ao meu programa
 
-class Pedal_rec:
+class rec:
     def __init__(self, window,name_tape):
         self.window = window
         self.mouse_pressed = False
@@ -40,7 +41,7 @@ class Pedal_rec:
                 raise
                 print( "after raise")
 
-            data = '\x00' * self.CHUNK  # or however you choose to handle it, e.g. return None
+            return None
 
         self.frames.append(data)
 
@@ -56,8 +57,8 @@ class Pedal_rec:
         wf.setframerate(self.RATE)
         wf.writeframes(b''.join(self.frames))
         wf.close()
- 
-    #mudar "onMouseDown" por "OnKeyDown"
+
+        
     def OnMouseDown(self, event):
         self.mouse_pressed = True
         self.poll()

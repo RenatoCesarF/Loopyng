@@ -1,32 +1,36 @@
 #bibliotecas
 from tkinter import *
 from PIL import Image, ImageTk
-from pygame import mixer_music
 from pygame import mixer
-import webbrowser
+from webbrowser import open_new
+
 
 #importação dos arquivos internos
-from TK_record import Pedal_rec
-from TK_play import play
-#from key_pressed import key_pressed
+from pedal_a import buttom_rec
+#from record import rec
 
 
-#inicializando o player
+#inicializando o sistema de audio
 mixer.init()
+
 
 '''
 =============================
 == Configurações da Janela ==
 =============================
 '''
-window = Tk()
-window.title('Loopyng')
+window = Tk() #inicializando a janela
 #tamanho da janela
-window.geometry('800x450+260+70')
-#alterando o fundo da imagem
+window.geometry('790x450+260+70')
+window.title('Loopyng')
+
+window.iconbitmap(r'../assents/icon.ico') #escolhendo o iconi
+#alterando a cor de fundo
 window["bg"] = "#BDBDBD"
 #definição do tamanho ta janela
-window.maxsize(800,450)
+window.maxsize(790, 450)
+window.minsize(690, 300)
+
 
 
 '''
@@ -43,7 +47,7 @@ area_logo.pack()
 
 #texto do cabeçalho
 text_header = Label(window, text='Aperte uma das teclas para começar a gravar, e depois ESPAÇO para parar', bg='#BDBDBD',font=("HarvestItal", 15),fg='#2D2D2D')
-text_header.place(x= 60, y = 130)
+text_header.place(x= 70, y = 130)
 
 
 '''
@@ -78,6 +82,7 @@ area_pedal = Label(window, image=pedal_f, bg='#BDBDBD' )#ultimo parametro é o f
 area_pedal.pedal_f = pedal_f
 area_pedal.pack()
 area_pedal.place(x= 550, y= 180)
+
 '''
 ================
 == GitHub Link==
@@ -85,19 +90,15 @@ area_pedal.place(x= 550, y= 180)
 '''
 #Icon github
 github = PhotoImage(file="../assents/github_icon.png").subsample(4, 4) 
-github_icon = Label(window, image = github, bg='#BDBDBD')#ultimo parametro é o fundo
+github_icon = Label(window, image = github, bg='#BDBDBD', cursor="hand2")#ultimo parametro é o fundo
 github_icon.github_icon = github
-github_icon.pack()
-github_icon.place(x= 0, y = 400)
+github_icon.pack(side=BOTTOM, anchor=SW)
 
-def callback(event):
-    webbrowser.open_new(event.widget.cget('text'))
-#Link/text
-link_git = Label(window,text=r"https://github.com/RenatoCesarF/Loopyng",font=("arial", 10), fg="#939694", cursor="hand2", bg='black')
-link_git.pack()
-link_git.place(x= 47, y = 415)
 
-link_git.bind("<Button-1>", callback)
+def callback(event): #função que redireciona para a pagina no github
+    webbrowser.open_new('https://github.com/RenatoCesarF/Loopyng')
+    
+github_icon.bind("<Button-1>", callback) #esta linha serve para detectar se o botão esquerdo do mause foi clicado no iconi, caso sim, ele chama o redirecionamento
 #=====================================
 
 
@@ -105,8 +106,8 @@ link_git.bind("<Button-1>", callback)
 #--GRAVAÇÃO--
 #------------
 
-#passar a função inteira de keylistner aqui para dentro
-# refazer o sistema de gravação
+pedal_a = buttom_rec(window, 'pedal_a')
+
 
 window.mainloop()
 

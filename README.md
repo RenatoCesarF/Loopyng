@@ -13,7 +13,6 @@ segue um vídeo exemplo: https://www.youtube.com/watch?v=Zdrx3YS9v8k
 
 
 
-
 ## 	:arrow_forward: Uso:
 Iicialize o arquivo **main.py** com algum interpretador python, o programa ja estará funcionando e te dará instruções
 e mensagens sobre o que esta acontecendo. Para resumir: aperte uma das letrar **A, S, D** ou **F** para gravar um audio, 
@@ -21,11 +20,16 @@ cada uma delas representa um dos pedais da loop station e cada uma suporta grava
 parar a gravação basta apertar espaço e o audio que fora gravado se repetira até o fechamento do programa. 
 
 Após a gravação do primeiro pedal (letra) é possível gravar nos outros e assim por diante. ainda existem funcionalidade
-a serem implementadas e também existe um possível **bug** onde seu audio fica estourado, é apenas reiniciar o computador que
+a serem implementadas e também existe um possível **bug** (na versão de terminal) onde seu audio fica estourado, é apenas reiniciar o computador que
 tudo voltará ao normal.
 
 
  <h3> Se divirta! <h3/>
+
+
+# :newspaper:Layout
+![layout](https://user-images.githubusercontent.com/62253156/83658080-b7c0e580-a58f-11ea-8843-82264b3d77b1.png)
+
 
 ## 	:globe_with_meridians:	 Tecnologias:
 - Gravação de audio

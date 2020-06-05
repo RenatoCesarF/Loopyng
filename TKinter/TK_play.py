@@ -10,10 +10,11 @@
 
 from pygame import mixer
 from pygame import mixer_music
-from keyboard import is_pressed
-from tkinter import *
-#from key_pressed import key_pressed
-mixer.init()
-def play(name_tape):
+
+#mixer.init()
+def play(name_tape): 
+    print('\n\n tocando')
     mixer.music.load(name_tape)
     mixer.music.play(-1)
+
+#play('pedal_a')
