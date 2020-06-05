@@ -6,9 +6,10 @@ from webbrowser import open_new
 
 
 #importação dos arquivos internos
-from pedal_a import buttom_rec
-#from record import rec
-
+from pedal_a import rec_a
+from pedal_s import rec_s
+from pedal_d import rec_d
+from pedal_f import rec_f
 
 #inicializando o sistema de audio
 mixer.init()
@@ -83,11 +84,13 @@ area_pedal.pedal_f = pedal_f
 area_pedal.pack()
 area_pedal.place(x= 550, y= 180)
 
+
 '''
-================
-== GitHub Link==
-================
+===========================
+== outras funcionalidades==
+===========================
 '''
+#== Redirecionando usuário para o github do projeto ==#
 #Icon github
 github = PhotoImage(file="../assents/github_icon.png").subsample(4, 4) 
 github_icon = Label(window, image = github, bg='#BDBDBD', cursor="hand2")#ultimo parametro é o fundo
@@ -95,18 +98,34 @@ github_icon.github_icon = github
 github_icon.pack(side=BOTTOM, anchor=SW)
 
 
-def callback(event): #função que redireciona para a pagina no github
+def git_redirect(event): #função que redireciona para a pagina no github
     webbrowser.open_new('https://github.com/RenatoCesarF/Loopyng')
     
-github_icon.bind("<Button-1>", callback) #esta linha serve para detectar se o botão esquerdo do mause foi clicado no iconi, caso sim, ele chama o redirecionamento
+github_icon.bind("<Button-1>", git_redirect)# Detectar se o botão esquerdo do mause foi clicado no ícone, caso sim, ele chama o redirecionamento
 #=====================================
 
+#== Função de fechamento da janela
+def on_close():
+    print('fechano programa...')
+    mixer.quit() #Parano a reprodução do audio
+    window.destroy()
 
-#------------
-#--GRAVAÇÃO--
-#------------
+window.protocol("WM_DELETE_WINDOW", on_close)#esperando o usuario apertar o botão de fechar
+#====================================
 
-pedal_a = buttom_rec(window, 'pedal_a')
+
+'''
+==============
+== Gravação ==
+==============
+'''
+#chamada dos pedais
+pedal_a = rec_a(window, 'pedal_a')
+pedal_s = rec_s(window, 'pedal_s')
+pedal_d = rec_d(window, 'pedal_d')
+pedal_f = rec_f(window, 'pedal_f')
+
+
 
 
 window.mainloop()

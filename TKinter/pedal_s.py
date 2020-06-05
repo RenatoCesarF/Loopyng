@@ -5,12 +5,12 @@ from keyboard import is_pressed
 from TK_play import play
 
 
-class rec_a:
+class rec_s:
     def __init__(self, window, name_tape):
         self.name_tape = name_tape
         self.window = window
         self.key_pressed = False
-        window.bind("<a>", self.Key_A)  #bind da tecla A para começar a gravação
+        window.bind("<s>", self.Key_A)  #bind da tecla S para começar a gravação
         window.bind("<space>", self.Key_space) #bind da tecla ESPAÇO para parar a gravação
         self.CHUNK = 1024
         self.FORMAT = pyaudio.paInt16
