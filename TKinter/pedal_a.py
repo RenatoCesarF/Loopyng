@@ -69,8 +69,6 @@ class rec_a:
         wf.close()
         
 
-        
- 
     #função que ouve a tecla F
     def Key_a(self, event):
         
