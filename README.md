@@ -59,12 +59,18 @@ tudo voltará ao normal.
 > webbrowser
  
 
+# :warning: Bugs: :warning:
+> todos os bugs estão sendo arrumados
+- necessário reiniciar o programa para usa-lo novamente.
 
+- Deley de um segundo durante os loopings 
 
 ###	:crystal_ball: Implementações futuras
 - Interface gráfica (em andamento)
     * sliders para controle de volume
 - Um sistema de play e pause dos áudios que já estão tocando
+- grafico do microfone em tempo real (usando pyaudio)
+- botão para ativar metronomo + area de texto para mudar o seu ritimo
 - Mais pedais de gravação
 - Uma melhora no som que é gravado, tanto no quesito musical quanto de qualidade de som
 - suporte para instrumentos via cabo

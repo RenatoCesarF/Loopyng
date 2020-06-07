@@ -1,4 +1,4 @@
-import pyaudio
+]~[import pyaudio
 import wave
 import sys
 import keyboard
@@ -9,7 +9,7 @@ def record(name_tape):
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
-    RECORD_SECONDS = 500
+    RECORD_SECONDS = 1500
     WAVE_OUTPUT_FILENAME = name_tape
         
     p = pyaudio.PyAudio()

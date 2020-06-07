@@ -6,17 +6,16 @@ from TK_play import play
 
 
 class rec_f:
-    def __init__(self, window, name_tape):
-        self.name_tape = name_tape
+    def __init__(self, window):
+        self.name_tape = 'pedal_f'
         self.window = window
         self.key_pressed = False
         window.bind("<f>", self.Key_f)  #bind da tecla F para começar a gravação
-        window.bind("<space>", self.Key_space) #bind da tecla ESPAÇO para parar a gravação
         self.CHUNK = 1024
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 2
         self.RATE = 44100
-        self.WAVE_OUTPUT_FILENAME = name_tape
+        self.WAVE_OUTPUT_FILENAME = self.name_tape
 
         self.p = pyaudio.PyAudio()
        
@@ -67,32 +66,31 @@ class rec_f:
         wf.close()
         
 
-        #tocando o que foi gravado    
-        play(self.name_tape)
+        
  
     #função que ouve a tecla F
     def Key_f(self, event):
-        '''
-        #apagando o arquivo de audio gravado anteriormente com mesmo nome
-        try:
-            os.remove('{}'.format(self.name_tape))
         
-        except:
-            pass
-        '''
         self.key_pressed = True
         self.poll()
+
+    def poll(self):
+        self.window.bind("<space>", self.Key_space) #bind da tecla ESPAÇO para parar a gravação
+        if self.key_pressed:
+            self.recordFrame()
+            
+            self.wait = self.window.after(1, self.poll)
+
 
     #função eu ouve a tecla ESPAÇO
     def Key_space(self, event):
         print('a tecla espaço foi pressionada e esta rodando KeySpace agora')
         self.key_pressed = False
         print('parando gravação')
-        self.window.after(1000,self.finishRecording)
+        self.finishRecording()
 
+        #tocando o que foi gravado    
+        def play_tk():
+            play(self.name_tape)
+        self.window.after(1000, play_tk)
 
-    def poll(self):
-        if self.key_pressed:
-            self.recordFrame()
-            
-            self.wait = self.window.after(1, self.poll)

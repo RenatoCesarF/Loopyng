@@ -1,5 +1,6 @@
 #bibliotecas
 from tkinter import *
+import tkinter as tk
 from PIL import Image, ImageTk
 from pygame import mixer
 from webbrowser import open_new
@@ -56,12 +57,35 @@ text_header.place(x= 70, y = 130)
 == Foto Pedais==
 ================
 '''
+
 # Pedal A
-pedal_a = PhotoImage(file="../assents/Pedal_A.png").zoom(2,2)
-area_pedal = Label(window, image=pedal_a, bg='#BDBDBD' )#ultimo parametro é o fundo
-area_pedal.pedal_a = pedal_a
-area_pedal.pack()
-area_pedal.place(x= 100, y= 180)
+def pedal_a_show(): #função que monta o pedal A na  tela
+    pedal_a = PhotoImage(file="../assents/Pedal_A.png" ).zoom(2,2)
+    area_pedal = Label(window, image=pedal_a, bg='#BDBDBD')#ultimo parametro é o fundo
+    area_pedal.pedal_a = pedal_a
+    area_pedal.pack()
+    area_pedal.place(x= 100, y= 180) #posição do label
+    
+pedal_a_show() #mostrando o pedal A
+
+
+def on(event): #função que mostra a tecla apertada
+    print('teclado')
+    pedal_a_out = PhotoImage(file="../assents/Pedal_A_mod.png" ).zoom(2,2)
+    area_pedal_out = tk.Label(window, image=pedal_a_out, bg='#BDBDBD')
+    area_pedal_out.pedal_a_out = pedal_a_out
+    area_pedal_out.pack()
+    area_pedal_out.place(x= 100, y= 180)
+    
+    def out(event):
+        print('desteclado')
+        pedal_a_out.blank() #sumindo com o botão escuro
+        pedal_a_show() #mostrando novamente o botão normal 
+        
+    window.bind('<space>',out)
+    
+window.bind('<a>',on)
+
 
 # Pedal S
 pedal_s = PhotoImage(file="../assents/Pedal_S.png").zoom(2,2)
@@ -119,13 +143,14 @@ window.protocol("WM_DELETE_WINDOW", on_close)#esperando o usuario apertar o bot�
 == Gravação ==
 ==============
 '''
+'''
 #chamada dos pedais
-pedal_a = rec_a(window, 'pedal_a')
-pedal_s = rec_s(window, 'pedal_s')
-pedal_d = rec_d(window, 'pedal_d')
-pedal_f = rec_f(window, 'pedal_f')
+pedal_a = rec_a(window)
+pedal_s = rec_s(window)
+pedal_d = rec_d(window)
+pedal_f = rec_f(window)
 
-
+'''
 
 
 window.mainloop()
