@@ -14,14 +14,13 @@ segue um vídeo exemplo: https://www.youtube.com/watch?v=Zdrx3YS9v8k
 
 
 ## 	:arrow_forward: Uso:
-Iicialize o arquivo **main.py** com algum interpretador python, o programa ja estará funcionando e te dará instruções
-e mensagens sobre o que esta acontecendo. Para resumir: aperte uma das letrar **A, S, D** ou **F** para gravar um audio, 
+Iicialize o arquivo **Tk_main.py** com algum interpretador python, o programa ja estará funcionando. A interface grafica
+te ajudará a saber o que esta acontecendo. Para resumir: aperte uma das letrar **A, S, D** ou **F** para gravar um audio, 
 cada uma delas representa um dos pedais da loop station e cada uma suporta gravar uma faixa de som. Assim que quiser
 parar a gravação basta apertar espaço e o audio que fora gravado se repetira até o fechamento do programa. 
 
 Após a gravação do primeiro pedal (letra) é possível gravar nos outros e assim por diante. ainda existem funcionalidade
-a serem implementadas e também existe um possível **bug** (na versão de terminal) onde seu audio fica estourado, é apenas reiniciar o computador que
-tudo voltará ao normal.
+a serem implementadas e também existe um possível **bug** (na versão de terminal) onde seu audio fica estourado, é apenas reiniciar o computador que tudo voltará ao normal.
 
 
  <h3> Se divirta! <h3/>
@@ -61,13 +60,13 @@ tudo voltará ao normal.
 
 ### :warning: Bugs: :warning:
 > todos os bugs estão sendo arrumados
-- necessário reiniciar o programa para usa-lo novamente.
+- Necessário reiniciar o programa para usa-lo novamente.
 
 - Não existe (ainda) sistema de play e pause dos audios gravados.
 
 
 ### :crystal_ball: Implementações futuras
-- Interface gráfica (em andamento)
+- Interface gráfica
     * sliders para controle de volume
 - Um sistema de play e pause dos áudios que já estão tocando
 - grafico do microfone em tempo real (usando pyaudio)
