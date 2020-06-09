@@ -59,7 +59,7 @@ tudo voltará ao normal.
 > webbrowser
  
 
-# :warning: Bugs: :warning:
+### :warning: Bugs: :warning:
 > todos os bugs estão sendo arrumados
 - necessário reiniciar o programa para usa-lo novamente.
 

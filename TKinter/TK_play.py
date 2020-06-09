@@ -1,4 +1,4 @@
-# Aqui ficará a função de play-pause do programa, todos os pedais 
+5# Aqui ficará a função de play-pause do programa, todos os pedais 
 # vão usar ela.
 # 
 # Ela ira receber um parametro "nome_tape" pra saber o que estará
@@ -7,56 +7,37 @@
 
 # O tk inter não tem um bom reprodutor de sons e por isso estarei usando
 # o pygames.mixer pra fazer a nossa reprodução
+
 from pygame import mixer
 from pygame import mixer_music
-
-from playsound import playsound
-
-#from pydub import AudioSegment
-#from pydub.playback import play
-
+from pygame import time
 from tkinter import *
-#mport tkSnack
 
-'''modelo pygames'''
-#mixer.init()
-def play(name_tape): 
+mixer.init()
+
+def play(name_tape,window):
+    
+    pause = False
+    
     print('\n\n tocando')
-    mixer.music.load(name_tape)
-    mixer.music.play(-1)
-
-'''
-#modelo playsound'
-def play(name_tape):
-    print('\n\n tocando')
-    playsound(name_tape)
-
-
-#modelo pydyb
-def play(name_tape):
-    song = AudioSegment.from_wav(name_tape)
-    play(song)
+    mixer.music.load(name_tape) #carregando o arquivo de audio
+    som = mixer.Sound(name_tape)#transformando-o em um objeto
+    largura = mixer.Sound.get_length(som)#definindo o tamanho do 
+    
+    my_delay = int((largura * 1000) - 550)  # transformando a largura em delay, multiplica-se por 1000 para conseguir
+                                            # o tempo em segundos, e depois tira-se outro valor para eliminar o 1 segundo
+                                            # de delay que existe no pygames.
 
 
+    #reproduzindo infinitamente o audio, com um delay definido acima.
+    def init_loop(som): #função que inicia um while em formato de tkinter
+        
+        def loop_this():
+            mixer.Sound.play(som)
+            init_loop(som)
+            
+        mixer.Sound.play(som)
+        
+        window.after(my_delay,loop_this)
 
-# modelo tk snack
-
-#testar separadamente
-
-def play(name_tape):
-    root = Tk()
-    tkSnack.initializeSnack(window)
-
-    snd = tkSnack.Sound()
-    snd.read(name_tape)
-    snd.play(blocking=1)
-
-#modelo nativo 
-import os
-def play():
-
-    file = "file.mp3"
-    os.system("mpg123 " + file)
-
-#play('pedal_a')
-'''
+    init_loop(som)
