@@ -63,9 +63,10 @@ tudo voltará ao normal.
 > todos os bugs estão sendo arrumados
 - necessário reiniciar o programa para usa-lo novamente.
 
-- Deley de um segundo durante os loopings 
+- Não existe (ainda) sistema de play e pause dos audios gravados.
 
-###	:crystal_ball: Implementações futuras
+
+### :crystal_ball: Implementações futuras
 - Interface gráfica (em andamento)
     * sliders para controle de volume
 - Um sistema de play e pause dos áudios que já estão tocando
