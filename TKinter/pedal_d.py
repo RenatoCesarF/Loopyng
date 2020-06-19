@@ -29,8 +29,11 @@ class pedal_d:
         try: self.stream = self.p.open(format=self.FORMAT,
                     channels=self.CHANNELS,
                     rate=self.RATE,
+                    output=True,
                     input=True,
-                    frames_per_buffer=self.CHUNK)
+                    frames_per_buffer=self.CHUNK,
+                    input_device_index=None,
+                    output_device_index= None)
         except:
             return 
         

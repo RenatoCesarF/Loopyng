@@ -20,7 +20,7 @@ class pedal_a:
         window.bind("<a>", self.Key_a)  #bind da tecla a para começar a gravação
         self.CHUNK = 1024
         self.FORMAT = pyaudio.paInt16
-        self.CHANNELS = 2
+        self.CHANNELS = 1
         self.RATE = 44100
         self.WAVE_OUTPUT_FILENAME = self.name_tape
 
@@ -29,8 +29,11 @@ class pedal_a:
         try: self.stream = self.p.open(format=self.FORMAT,
                     channels=self.CHANNELS,
                     rate=self.RATE,
+                    output=True,
                     input=True,
-                    frames_per_buffer=self.CHUNK)
+                    frames_per_buffer=self.CHUNK,
+                    input_device_index=None,
+                    output_device_index= None)
         except:
             return 
         
@@ -85,7 +88,7 @@ class pedal_a:
 
         # acionando o gravador
         self.key_pressed = True
-        self.poll()
+        self.window.after(500,self.poll)
         
 
     def poll(self):

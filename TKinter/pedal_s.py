@@ -6,6 +6,7 @@ from keyboard import is_pressed
 from TK_play import play
 from PIL import Image, ImageTk
 
+
 #classe gravadora 
 class pedal_s:
     def __init__(self, window):
@@ -20,7 +21,7 @@ class pedal_s:
         window.bind("<s>", self.Key_s)  #bind da tecla a para começar a gravação
         self.CHUNK = 1024
         self.FORMAT = pyaudio.paInt16
-        self.CHANNELS = 2
+        self.CHANNELS = 1
         self.RATE = 44100
         self.WAVE_OUTPUT_FILENAME = self.name_tape
 
@@ -29,13 +30,36 @@ class pedal_s:
         try: self.stream = self.p.open(format=self.FORMAT,
                     channels=self.CHANNELS,
                     rate=self.RATE,
+                    output=True,
                     input=True,
-                    frames_per_buffer=self.CHUNK)
+                    frames_per_buffer=self.CHUNK,
+                    input_device_index=None,
+                    output_device_index= None)
         except:
             return 
         
-
         self.frames = []
+        '''
+        #testes
+
+        input: index 4/9
+        output: index 8/10/11/8
+
+        #=====================
+        '''
+        #print(self.stream.get_input_latency()) # mostra a latencia no microfone 
+        
+        #print('\n\n', self.p.get_default_input_device_info(), '\n\n') #informações do input principal
+        print('\n\n', self.p.get_default_output_device_info(), '\n\n') #informações do output principal
+            
+        #print('\n\n', self.p.get_default_host_api_info(), '\n\n') #mostra as informações bases do host principal
+        
+        numero = 0
+        while numero < 18:
+            print('\n', self.p.get_device_info_by_index(numero), '\n\n') #mostra um host pelo index
+            numero +=1
+        
+        
 
     def recordFrame(self):
         #testes

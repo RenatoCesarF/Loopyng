@@ -24,20 +24,16 @@ def play(name_tape,window):
     som = mixer.Sound(name_tape)#transformando-o em um objeto
     largura = mixer.Sound.get_length(som)#definindo o tamanho do 
     
-    my_delay = int((largura * 1000) - 550)  # transformando a largura em delay, multiplica-se por 1000 para conseguir
+    my_delay = int((largura * 1000) - 400)  # transformando a largura em delay, multiplica-se por 1000 para conseguir
                                             # o tempo em segundos, e depois tira-se outro valor para eliminar o 1 segundo
                                             # de delay que existe no pygames.
 
-
+    
     #reproduzindo infinitamente o audio, com um delay definido acima.
-    def init_loop(som): #função que inicia um while em formato de tkinter
-        
-        def loop_this():
-            mixer.Sound.play(som)
-            init_loop(som)
-            
-        mixer.Sound.play(som)
-        
-        window.after(my_delay,loop_this)
+    def init_loop():
 
-    init_loop(som)
+        mixer.Sound.play(som)
+        window.after(my_delay, init_loop)
+        
+    init_loop()
+    
