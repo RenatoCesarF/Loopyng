@@ -9,7 +9,7 @@
 segue um vídeo exemplo: https://www.youtube.com/watch?v=Zdrx3YS9v8k
 
 
-### :keyboard: Um pouco mais sobreo projeto: (vídeo em desenvolvimento)
+### :keyboard: Vídeo sobre o desenvolvimento: [![Sobre o Projeto - Loopyng](https://res.cloudinary.com/marcomontalbano/image/upload/v1593005006/video_to_markdown/images/youtube--MOxTDfwdxCw-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=MOxTDfwdxCw&t=614s "Sobre o Projeto - Loopyng")
 
 
 
