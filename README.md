@@ -1,45 +1,43 @@
 ![loopyng logo](https://user-images.githubusercontent.com/62253156/82760979-3d40da80-9dc5-11ea-8690-652f656f565f.png)
 
-<h2>Um programa escrito em python que tem como objetivo replicar uma loop station gravando e reproduzindo em loopping seu microfone.</h2>
+<h2>A program written in python that aims to replicate a loop station by recording and looping your microphone.</h2>
 
 <br/>
 	
 	
-### :thinking: O que é uma loop station? 
-segue um vídeo exemplo: https://www.youtube.com/watch?v=Zdrx3YS9v8k
+### :thinking: What is a Loop Station? 
+Here is a video explaning: https://www.youtube.com/watch?v=Zdrx3YS9v8k
 
 
-### :keyboard: Vídeo sobre o desenvolvimento: [![Sobre o Projeto - Loopyng](https://res.cloudinary.com/marcomontalbano/image/upload/v1593005006/video_to_markdown/images/youtube--MOxTDfwdxCw-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=MOxTDfwdxCw&t=614s "Sobre o Projeto - Loopyng")
+### :keyboard: Video about the development (in Portuguese): [![Sobre o Projeto - Loopyng](https://res.cloudinary.com/marcomontalbano/image/upload/v1593005006/video_to_markdown/images/youtube--MOxTDfwdxCw-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=MOxTDfwdxCw&t=614s "Sobre o Projeto - Loopyng")
 
 
 
 ## 	:arrow_forward: Uso:
-Iicialize o arquivo **Tk_main.py** com algum interpretador python, o programa ja estará funcionando. A interface grafica
-te ajudará a saber o que esta acontecendo. Para resumir: aperte uma das letrar **A, S, D** ou **F** para gravar um audio, 
-cada uma delas representa um dos pedais da loop station e cada uma suporta gravar uma faixa de som. Assim que quiser
-parar a gravação basta apertar espaço e o audio que fora gravado se repetira até o fechamento do programa. 
+Initialize the tile ** Tk_main.py **  with some python interpreter, the program will already be working. The graphical interface
+will help you to know what is happening. To summarize: press one of the letters ** A, S, D ** or ** F ** to record an audio,
+each represents one of the pedals on the loop station and each supports recording a sound track. As soon as you want
+stop recording just press space and the audio that was recorded will be repeated until the program closes.
 
-Após a gravação do primeiro pedal (letra) é possível gravar nos outros e assim por diante. ainda existem funcionalidade
-a serem implementadas e também existe um possível **bug** (na versão de terminal) onde seu audio fica estourado, é apenas reiniciar o computador que tudo voltará ao normal.
+After recording the first pedal (letter) it is possible to record on the others and so on. functionality still exists
+to be implemented and there is also a possible ** bug ** (in the terminal version) where your audio is burst, just restart the computer and everything will be back to normal.
 
-
- <h3> Se divirta! <h3/>
+ <h3> Have Fun!<h3/>
 
 
 # :newspaper:Layout
 ![layout](https://user-images.githubusercontent.com/62253156/83658080-b7c0e580-a58f-11ea-8843-82264b3d77b1.png)
 
 
-## 	:globe_with_meridians:	 Tecnologias:
-- Gravação de audio
-- Criação e reprodução de arquivos .wav
-- threading para uso de multiplas funções simultaneamente
-- Keybord listener para receber comandos do teclado.
-- TKinter para inteface gráfica
-- webbrowser para redirecionar para o navegador
+## 	:globe_with_meridians:	 Tecnologies:
+- Audio recording
+- creation and reproduction of .wav files
+- threading for multiple functions simultaneously
+- Keybord listener to recebe commands.
+- TKinter for graphic interface
+- Webbrowser to redirect to chrome page
 
-
-## :blue_book: Bibliotecas:
+## :blue_book: Libraries:
 
 > keyboard
 
@@ -59,18 +57,15 @@ a serem implementadas e também existe um possível **bug** (na versão de termi
  
 
 ### :warning: Bugs: :warning:
-> todos os bugs estão sendo arrumados
-- Necessário reiniciar o programa para usa-lo novamente.
+- Need to restar the program to re-use it.
 
-- Não existe (ainda) sistema de play e pause dos audios gravados.
+- Doesn't exist a play/pause system.
 
 
-### :crystal_ball: Implementações futuras
-- Interface gráfica
-    * sliders para controle de volume
-- Um sistema de play e pause dos áudios que já estão tocando
-- grafico do microfone em tempo real (usando pyaudio)
-- botão para ativar metronomo + area de texto para mudar o seu ritimo
-- Mais pedais de gravação
-- Uma melhora no som que é gravado, tanto no quesito musical quanto de qualidade de som
-- suporte para instrumentos via cabo
+### :crystal_ball: Future implefmentations
+- Graphic Interface
+    * Volume Controllers
+- Play and pause system
+- microphone power graphic
+- Metronome system
+- Improve recorded sound quality
