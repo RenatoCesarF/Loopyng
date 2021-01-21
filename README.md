@@ -13,7 +13,7 @@ Here is a video explaning: https://www.youtube.com/watch?v=Zdrx3YS9v8k
 
 
 
-## 	:arrow_forward: Uso:
+## 	:arrow_forward: Usage:
 Initialize the tile ** Tk_main.py **  with some python interpreter, the program will already be working. The graphical interface
 will help you to know what is happening. To summarize: press one of the letters ** A, S, D ** or ** F ** to record an audio,
 each represents one of the pedals on the loop station and each supports recording a sound track. As soon as you want
