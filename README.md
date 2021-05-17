@@ -62,7 +62,7 @@ to be implemented and there is also a possible ** bug ** (in the terminal versio
 - Doesn't exist a play/pause system.
 
 
-### :crystal_ball: Future implefmentations
+### :crystal_ball: Future implementations
 - Graphic Interface
     * Volume Controllers
 - Play and pause system
